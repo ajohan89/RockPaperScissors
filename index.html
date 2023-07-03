@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Or Scissors</title>
+</head>
+<body>
+    <h1>Welcome to the Rock, Paper, Scissors Game!</h1>
+    <p>You will go 5 rounds with the computer to see if you can beat it. Each
+        round will display the winner of that round. Good luck, we are all counting on you!
+    </p>
+    
+    <script>
+            const pInput = prompt('Type in Rock, Paper, or Scissors','');
+            const playerSelection = pInput.toLowerCase();
+            const selections = ['rock', 'paper', 'scissors'];
+            const computerSelection = computerChoice();
+
+            
+            function computerChoice(){
+                return(selections[(Math.floor(Math.random() * selections.length))]);
+            }
+            function playRound(playerSelection, computerSelection){
+                if(playerSelection === computerSelection){
+                    alert('tie');
+                    playRound();
+                }
+                else if(playerSelection === 'rock' && computerSelection === 'paper'){
+                    return('You lose, paper beats rock');
+                }
+                else if(playerSelection === 'paper' && computerSelection === 'rock'){
+                    return('You win, paper beats rock');
+                } 
+            }
+            function game(){
+                    //write for loop here for play round here
+            }
+            
+
+    </script>
+</body>
+</html>
