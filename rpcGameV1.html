@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Or Scissors</title>
+</head>
+<body>
+    <h1>Welcome to the Rock, Paper, Scissors Game!</h1>
+    <p>You will go 5 rounds with the computer to see if you can beat it. Each
+        round will display the winner of that round. Good luck, we are all counting on you!
+    </p>
+
+    <script>
+        function playRound(x, y){
+            if(x === y){
+                console.log ('tie');
+            }
+            if(x === 'rock' && y === 'paper'){
+                console.log (`You lose, paper beats rock!`);
+            }
+            else if(x === 'rock' && y === 'scissors'){
+                console.log ('You win, rock beats scissors');
+            } 
+            else if(x === 'paper' && y === 'rock'){
+                console.log ('You win, paper beats rock');
+            } 
+            else if(x === 'paper' && y === 'scissors'){
+                console.log ('You lose, scissors beats paper');
+            }
+            else if(x === 'scissors' && y === 'paper'){
+                console.log ('You win, scissors beats paper');
+            } 
+            else if(x === 'scissors' && y === 'rock'){
+                console.log ('You lose, rock beats scissors');
+            }
+            else if(x != 'scissors' && x != 'paper' && x != 'rock'){
+                alert ('Invalid response');
+                promptMe();
+            }
+        }
+        function promptMe() {
+            const selections = ['rock', 'paper', 'scissors'];
+            computerSelection = selections[Math.floor(Math.random() * selections.length)];
+            promptPlayer = prompt("Please enter rock, paper, or scissors", '');
+            playerSelection = promptPlayer.toLowerCase();
+            playRound(playerSelection, computerSelection);
+            }
+
+        function game() {
+            for (let i = 0; i < 5; i++) {
+            promptMe();
+  }
+}
+
+game();
+        </script>
+</body>
+</html>
